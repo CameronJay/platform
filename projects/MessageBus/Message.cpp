@@ -1,10 +1,14 @@
 #include "Message.h"
 
-Message::Message()
-:text("")
+namespace MessageBus
 {
-}
 
-Message::~Message()
-{
+    Message::Message(std::string const& text)
+    :text_(text)
+    {
+    }
+
+    Message::~Message()
+    {
+    }
 }

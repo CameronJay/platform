@@ -1,17 +1,17 @@
-#ifndef MessageBus_Message
-#define MessageBus_Message
+#pragma once
 
 #include <string>
 
-class Message
+namespace MessageBus
 {
-public:
-    Message();
-    virtual ~Message();
-
-private:
-    std::string text;
+    class Message
+    {
+    public:
+        Message(std::string const& text);
+        virtual ~Message();
+        std::string const& text() const { return text_; }
     
-};
-
-#endif // !MessageBus_Message
+    private:
+        std::string const text_;
+    };
+}
