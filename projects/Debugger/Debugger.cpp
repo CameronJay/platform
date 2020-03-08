@@ -1,19 +1,19 @@
-/*
-Platform
-Cameron Dempsey
-James Tubbs
-*/
-
+#include "Debugger.h"
 #include <iostream>
+#include <MessageBus/MessageBus.h>
 
-static const std::string close = "CLOSE";
-
-int main()
+Debug::Debugger::Debugger(MessageBus::MessageBus* bus)
+:bus_(bus)
 {
-    std::string input = "";
-    do
-    {
-        std::cin >> input;
-    } 
-    while (input != close);
+    bus_->attach(this);
+}
+
+Debug::Debugger::~Debugger()
+{
+    bus_->detach(this);
+}
+
+void Debug::Debugger::update(MessageBus::Message const& message)
+{
+    std::cout << "Debugger received: " << message.text() << std::endl;
 }

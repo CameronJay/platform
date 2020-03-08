@@ -2,6 +2,7 @@
 
 #include "Message.h"
 #include <list>
+#include <vector>
 
 namespace MessageBus
 {
@@ -11,6 +12,7 @@ namespace MessageBus
     {
     public:
         typedef std::list<MessageBusObserver*> ObserverList;
+        typedef std::vector<Message> MessageList;
 
         MessageBus();
         virtual ~MessageBus();
@@ -18,11 +20,14 @@ namespace MessageBus
         void attach(MessageBusObserver* observer);
         void detach(MessageBusObserver* observer);
 
+        void receive(Message const& message);
+
     protected:
         void notify(Message const& message);
 
     private:
         ObserverList observers_;
+        MessageList messages_;
     };
 
 }

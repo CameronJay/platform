@@ -21,6 +21,12 @@ namespace MessageBus
         observers_.remove(observer);
     }
 
+    void MessageBus::receive(Message const& message)
+    {
+        messages_.push_back(message);
+        notify(messages_.back());
+    }
+
     void MessageBus::notify(Message const& message)
     {
         ObserverList::iterator iterator = observers_.begin();

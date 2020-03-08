@@ -33,12 +33,12 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>$(SolutionDir)\build\$(Configuration)\</OutDir>
-    <IntDir>$(SolutionDir)\build\$(Configuration)\</IntDir>
+    <OutDir>$(SolutionDir)build\test\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)build\test\$(ProjectName)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>$(SolutionDir)\build\$(Configuration)\</OutDir>
-    <IntDir>$(SolutionDir)\build\$(Configuration)\</IntDir>
+    <OutDir>$(SolutionDir)build\test\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)build\test\$(ProjectName)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
