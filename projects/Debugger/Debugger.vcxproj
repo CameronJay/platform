@@ -168,6 +168,9 @@
     <ProjectReference Include="..\MessageBus\MessageBus.vcxproj">
       <Project>{071aec3c-8cd3-458e-b615-d6591ef69b3b}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\Threading\Threading.vcxproj">
+      <Project>{70a4bf8b-edf1-49d5-8710-865fc6444be2}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
