@@ -5,10 +5,18 @@
 Debug::Debugger::Debugger(MessageBus::MessageBus* bus)
 :bus_(bus)
 {
-    bus_->attach(this);
 }
 
 Debug::Debugger::~Debugger()
+{
+}
+
+void Debug::Debugger::start()
+{
+    bus_->attach(this);
+}
+
+void Debug::Debugger::stop()
 {
     bus_->detach(this);
 }

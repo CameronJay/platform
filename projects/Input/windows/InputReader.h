@@ -4,13 +4,15 @@
 #include <memory>
 #include <MessageBus/MessageBusObserver.h>
 
-namespace Debug
+namespace Input
 {
-    class Debugger : public MessageBus::MessageBusObserver
+    class InputReader : public MessageBus::MessageBusObserver
     {
     public:
-        Debugger(MessageBus::MessageBus* bus);
-        virtual ~Debugger();
+        InputReader(MessageBus::MessageBus* bus);
+        virtual ~InputReader();
+
+        void inputLoop();
 
         // MessageBusObserver
         virtual void start();
@@ -21,6 +23,8 @@ namespace Debug
         MessageBus::MessageBus* const bus() const { return bus_; }
 
     private:
+        static const char loopBreaker_ = 'd';
         MessageBus::MessageBus* bus_;
+        bool loop_;
     };
 }

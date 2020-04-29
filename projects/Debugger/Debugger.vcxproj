@@ -162,6 +162,9 @@
     <ClInclude Include="Debugger.h" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Input\Input.vcxproj">
+      <Project>{27ca9f70-63b3-4681-80f2-ca8d5421197e}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\MessageBus\MessageBus.vcxproj">
       <Project>{071aec3c-8cd3-458e-b615-d6591ef69b3b}</Project>
     </ProjectReference>

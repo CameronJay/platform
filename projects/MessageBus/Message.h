@@ -8,10 +8,11 @@ namespace MessageBus
     {
     public:
         Message(std::string const& text);
+        Message(char const character);
         virtual ~Message();
         std::string const& text() const { return text_; }
     
     private:
-        std::string const text_;
+        std::string text_;
     };
 }
