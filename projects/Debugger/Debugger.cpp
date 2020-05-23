@@ -21,7 +21,7 @@ void Debug::Debugger::stop()
     bus_->detach(this);
 }
 
-void Debug::Debugger::update(MessageBus::Message const& message)
+void Debug::Debugger::update()
 {
-    std::cout << "Debugger received: " << message.text() << std::endl;
+    std::cout << "Debugger received: " << std::endl;
 }

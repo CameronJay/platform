@@ -1,5 +1,6 @@
 #include "MessageBus.h"
 #include "MessageBusObserver.h"
+#include "Threading/Task.h"
 
 namespace MessageBus
 {
@@ -24,17 +25,18 @@ namespace MessageBus
     void MessageBus::receive(Message const& message)
     {
         messages_.push_back(message);
-        notify(messages_.back());
+        Task task = std::bind(&MessageBus::notify, this);
+
     }
 
-    void MessageBus::notify(Message const& message)
+    void MessageBus::notify()
     {
         ObserverList::iterator iterator = observers_.begin();
         ObserverList::iterator end = observers_.end();
 
         for (iterator; iterator != end; ++iterator)
         {
-            (*iterator)->update(message);
+            (*iterator)->update();
         }
     }
 }

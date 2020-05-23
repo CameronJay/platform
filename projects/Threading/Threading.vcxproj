@@ -19,11 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DispatchQueue.h" />
+    <ClInclude Include="TaskQueue.h" />
     <ClInclude Include="Task.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DispatchQueue.cpp" />
+    <ClCompile Include="TaskQueue.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

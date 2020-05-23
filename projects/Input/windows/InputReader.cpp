@@ -36,12 +36,12 @@ void Input::InputReader::stop()
     bus_->detach(this);
 }
 
-void Input::InputReader::update(MessageBus::Message const& message)
+void Input::InputReader::update()
 {
-    std::cout << "InputReader received: " << message.text() << std::endl;
+    std::cout << "InputReader received: " << std::endl;
 
-    if (message.text()[0] == loopBreaker_)
-    {
-        loop_ = false;
-    }
+    //if (message.text()[0] == loopBreaker_)
+    //{
+    //    loop_ = false;
+    //}
 }

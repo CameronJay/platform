@@ -15,7 +15,7 @@ namespace Debug
         // MessageBusObserver
         virtual void start();
         virtual void stop();
-        virtual void update(MessageBus::Message const& message);
+        virtual void update();
 
         // Debugger
         MessageBus::MessageBus* const bus() const { return bus_; }

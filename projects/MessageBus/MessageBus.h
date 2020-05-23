@@ -21,9 +21,8 @@ namespace MessageBus
         void detach(MessageBusObserver* observer);
 
         void receive(Message const& message);
-
     protected:
-        void notify(Message const& message);
+        void notify();
 
     private:
         ObserverList observers_;

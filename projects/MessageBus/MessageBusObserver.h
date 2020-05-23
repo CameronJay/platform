@@ -14,7 +14,7 @@ namespace MessageBus
 
         virtual void start() = 0;
         virtual void stop() = 0;
-        virtual void update(Message const& message) = 0;
+        virtual void update() = 0;
 
     };
 

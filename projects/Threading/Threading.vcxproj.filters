@@ -15,15 +15,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DispatchQueue.h">
+    <ClInclude Include="Task.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Task.h">
+    <ClInclude Include="TaskQueue.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DispatchQueue.cpp">
+    <ClCompile Include="TaskQueue.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
