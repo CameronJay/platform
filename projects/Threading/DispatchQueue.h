@@ -8,11 +8,11 @@
 
 namespace Threading
 {
-    class TaskQueue
+    class DispatchQueue
     {
         public:
-            TaskQueue();
-            ~TaskQueue();
+            DispatchQueue();
+            ~DispatchQueue();
 
             void start();
             void execute();

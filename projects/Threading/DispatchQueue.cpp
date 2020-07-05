@@ -1,18 +1,18 @@
-#include "TaskQueue.h"
+#include "DispatchQueue.h"
 
-Threading::TaskQueue::TaskQueue()
+Threading::DispatchQueue::DispatchQueue()
 {
 }
 
-Threading::TaskQueue::~TaskQueue()
+Threading::DispatchQueue::~DispatchQueue()
 {
 }
 
-void Threading::TaskQueue::start()
+void Threading::DispatchQueue::start()
 {
 }
 
-void Threading::TaskQueue::execute()
+void Threading::DispatchQueue::execute()
 {
     queueLock_.lock();
     if (!queue_.empty())
@@ -24,14 +24,14 @@ void Threading::TaskQueue::execute()
     queueLock_.unlock();
 }
 
-void Threading::TaskQueue::push(Task task)
+void Threading::DispatchQueue::push(Task task)
 {
     queueLock_.lock();
     queue_.push(task);
     queueLock_.unlock();
 }
 
-void Threading::TaskQueue::pop()
+void Threading::DispatchQueue::pop()
 {
     queueLock_.lock();
     queue_.pop();

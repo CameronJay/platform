@@ -18,12 +18,12 @@
     <ClInclude Include="Task.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="TaskQueue.h">
+    <ClInclude Include="DispatchQueue.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="TaskQueue.cpp">
+    <ClCompile Include="DispatchQueue.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
