@@ -1,5 +1,6 @@
 #pragma once
 
+#include <condition_variable>
 #include <queue>
 #include <mutex>
 #include <MessageBus/Message.h>
@@ -11,10 +12,11 @@ namespace Threading
     class DispatchQueue
     {
         public:
-            DispatchQueue();
+            DispatchQueue(std::string const& name, size_t threadCount = 1);
             ~DispatchQueue();
 
             void start();
+            void stop();
             void execute();
             void push(Task task);
             void pop();
@@ -22,5 +24,9 @@ namespace Threading
         protected:
             std::queue<Task> queue_;
             std::mutex queueLock_;
+            std::condition_variable cv_;
+            std::vector<std::thread> threads_;
+            bool run_;
+            std::string const name_;
     };
 }

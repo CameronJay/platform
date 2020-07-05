@@ -23,5 +23,6 @@ void Debug::Debugger::stop()
 
 void Debug::Debugger::update()
 {
-    std::cout << "Debugger received: " << std::endl;
+    MessageBus::Message message = bus_->messages().back();
+    std::cout << "Debugger received: " << message.text() << std::endl;
 }

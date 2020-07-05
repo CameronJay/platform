@@ -1,10 +1,12 @@
 #include "MessageBus.h"
 #include "MessageBusObserver.h"
-#include "Threading/Task.h"
+#include <Threading/DispatchQueue.h>
+#include <Threading/Task.h>
 
 namespace MessageBus
 {
-    MessageBus::MessageBus()
+    MessageBus::MessageBus(Threading::DispatchQueue* dispatchQueue)
+        :dispatchQueue_(dispatchQueue)
     {
     }
 
@@ -26,7 +28,7 @@ namespace MessageBus
     {
         messages_.push_back(message);
         Task task = std::bind(&MessageBus::notify, this);
-
+        dispatchQueue_->push(task);
     }
 
     void MessageBus::notify()

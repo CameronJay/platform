@@ -38,10 +38,11 @@ void Input::InputReader::stop()
 
 void Input::InputReader::update()
 {
-    std::cout << "InputReader received: " << std::endl;
+    MessageBus::Message message = bus_->messages().back();
+    std::cout << "InputReader received: " << message.text() << std::endl;
 
-    //if (message.text()[0] == loopBreaker_)
-    //{
-    //    loop_ = false;
-    //}
+    if (message.text()[0] == loopBreaker_)
+    {
+        loop_ = false;
+    }
 }

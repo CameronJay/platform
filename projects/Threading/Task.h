@@ -3,4 +3,4 @@
 #include <MessageBus/Message.h>
 #include <functional>
 
-using Task = std::function<void()>;
+using Task = std::function<void(void)>;
