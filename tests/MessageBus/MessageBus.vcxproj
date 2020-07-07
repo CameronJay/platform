@@ -35,12 +35,12 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>$(SolutionDir)build\test\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)build\test\$(ProjectName)\$(Configuration)\</IntDir>
-    <IncludePath>C:\Users\Camer\source\repos\platform\projects;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)projects;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(SolutionDir)build\test\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)build\test\$(ProjectName)\$(Configuration)\</IntDir>
-    <IncludePath>C:\Users\Camer\source\repos\platform\projects;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)projects;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemGroup>
     <ClInclude Include="MessageBusTest.h" />
