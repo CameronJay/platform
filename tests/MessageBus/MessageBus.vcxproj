@@ -35,15 +35,19 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>$(SolutionDir)build\test\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)build\test\$(ProjectName)\$(Configuration)\</IntDir>
+    <IncludePath>C:\Users\Camer\source\repos\platform\projects;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(SolutionDir)build\test\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)build\test\$(ProjectName)\$(Configuration)\</IntDir>
+    <IncludePath>C:\Users\Camer\source\repos\platform\projects;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemGroup>
+    <ClInclude Include="MessageTest.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="MessageTest.cpp" />
     <ClCompile Include="test.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -54,6 +58,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\projects\MessageBus\MessageBus.vcxproj">
+      <Project>{071aec3c-8cd3-458e-b615-d6591ef69b3b}</Project>
+    </ProjectReference>
   </ItemGroup>
   <ItemDefinitionGroup />
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
