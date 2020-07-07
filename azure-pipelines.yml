@@ -16,13 +16,13 @@ variables:
 
 steps:
 
-- task: Build
+- task: Build@1
   inputs:
     solution: '$(solution)'
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
 
-- task: Test
+- task: Test@2
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
