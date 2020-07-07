@@ -1,6 +1,5 @@
 #include "pch.h"
 #include "MessageTest.h"
-#include <MessageBus/Message.h>
 
 namespace MessageBusTests
 {

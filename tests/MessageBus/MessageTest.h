@@ -1,4 +1,5 @@
 #pragma once
+#include <MessageBus/Message.h>
 
 namespace MessageBusTests
 {
