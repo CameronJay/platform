@@ -31,3 +31,4 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+    testAssemblyVer2: '**\build\test\$(buildConfiguration)\*.exe'
