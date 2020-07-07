@@ -26,11 +26,6 @@
     <ClInclude Include="MessageBusMock.h" />
     <ClInclude Include="MessageBusObserverMock.h" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Threading\Threading.vcxproj">
-      <Project>{70a4bf8b-edf1-49d5-8710-865fc6444be2}</Project>
-    </ProjectReference>
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <ProjectGuid>{DE783E05-6DE5-4A92-A519-D8150C0B9BAE}</ProjectGuid>

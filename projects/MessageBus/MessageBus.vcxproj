@@ -28,11 +28,6 @@
     <ClInclude Include="MessageBus.h" />
     <ClInclude Include="MessageBusObserver.h" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Threading\Threading.vcxproj">
-      <Project>{70a4bf8b-edf1-49d5-8710-865fc6444be2}</Project>
-    </ProjectReference>
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <ProjectGuid>{071AEC3C-8CD3-458E-B615-D6591EF69B3B}</ProjectGuid>
@@ -112,6 +107,7 @@
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>
       </AdditionalIncludeDirectories>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
