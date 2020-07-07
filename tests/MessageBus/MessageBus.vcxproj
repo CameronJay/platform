@@ -43,10 +43,12 @@
     <IncludePath>C:\Users\Camer\source\repos\platform\projects;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemGroup>
+    <ClInclude Include="MessageBusTest.h" />
     <ClInclude Include="MessageTest.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="MessageBusTest.cpp" />
     <ClCompile Include="MessageTest.cpp" />
     <ClCompile Include="test.cpp" />
     <ClCompile Include="pch.cpp">
