@@ -31,5 +31,6 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
-    testAssemblyVer2: '**\test\*.exe' | 
-        '**\*TestAdapter.dll'
+    testAssemblyVer2: |
+      **\test\*.exe' | 
+      **\*TestAdapter.dll'
