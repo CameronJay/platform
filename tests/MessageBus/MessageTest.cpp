@@ -21,5 +21,6 @@ namespace MessageBusTests
         char actualChar = charMessage_.text()[0];
 
         EXPECT_EQ(MessageTest::testChar_, actualChar);
+        EXPECT_TRUE(false);
     }
 }
