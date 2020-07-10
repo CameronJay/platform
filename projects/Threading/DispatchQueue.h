@@ -14,14 +14,14 @@ namespace Threading
         public:
             DispatchQueue(std::string const& name, size_t threadCount = 1);
             ~DispatchQueue();
-
-            void start();
-            void stop();
-            void execute();
             void push(Task task);
             void pop();
 
         protected:
+            void start();
+            void stop();
+            void execute();
+
             std::queue<Task> queue_;
             std::mutex queueLock_;
             std::condition_variable cv_;

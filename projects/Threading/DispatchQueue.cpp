@@ -5,6 +5,7 @@ Threading::DispatchQueue::DispatchQueue(std::string const& name, size_t threadCo
     name_(name),
     threads_(threadCount)
 {
+    start();
 }
 
 Threading::DispatchQueue::~DispatchQueue()
@@ -45,7 +46,7 @@ void Threading::DispatchQueue::execute()
         cv_.wait(lock, [this]
             { return (queue_.size() || !run_); });
 
-        if (run_ && queue_.size())
+        if (run_ && (queue_.size()))
         {
             lock.unlock();
 

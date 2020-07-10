@@ -23,7 +23,6 @@ int main()
     std::shared_ptr<Input::InputReader> inputter(new Input::InputReader(bus.get()));
 
 
-    dispatchQueue->start();
     debugger->start();
     inputter->start();
 
