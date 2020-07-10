@@ -13,7 +13,6 @@ namespace ThreadingTests
         Threading::DispatchQueue queue(name, count);
         Task task = std::bind(&DispatchQueueTest::testFunction, this);
         queue.push(task);
-        std::cin.ignore();
     }
 
     void DispatchQueueTest::testFunction()
