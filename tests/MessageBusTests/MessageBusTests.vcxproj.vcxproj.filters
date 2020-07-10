@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="test.cpp" />
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="MessageBusTest.cpp">
+      <Filter>MessageBus</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageTest.cpp">
+      <Filter>Message</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="MessageBusTest.h">
+      <Filter>MessageBus</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageTest.h">
+      <Filter>Message</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="MessageBus">
+      <UniqueIdentifier>{65c82735-7390-40f0-ad39-ab0066056c11}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Message">
+      <UniqueIdentifier>{5a1ab6bf-979d-4627-a4e4-39a11bba7eb0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
