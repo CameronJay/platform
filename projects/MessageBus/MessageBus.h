@@ -2,6 +2,8 @@
 
 #include "Message.h"
 #include <list>
+#include <memory>
+#include <mutex>
 #include <vector>
 
 namespace Threading
@@ -19,7 +21,7 @@ namespace MessageBus
         typedef std::list<MessageBusObserver*> ObserverList;
         typedef std::vector<Message> MessageList;
 
-        MessageBus(Threading::DispatchQueue* dispatchQueue);
+        MessageBus();
         virtual ~MessageBus();
 
         void attach(MessageBusObserver* observer);
@@ -35,7 +37,8 @@ namespace MessageBus
         ObserverList observers_;
         MessageList messages_;
 
-        Threading::DispatchQueue* dispatchQueue_;
+        std::shared_ptr<Threading::DispatchQueue> dispatchQueue_;
+        std::mutex observerLock_;
     };
 
 }

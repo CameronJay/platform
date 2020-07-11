@@ -9,6 +9,7 @@ Debug::Debugger::Debugger(MessageBus::MessageBus* bus)
 
 Debug::Debugger::~Debugger()
 {
+    stop();
 }
 
 void Debug::Debugger::start()

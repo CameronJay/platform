@@ -21,14 +21,14 @@ namespace ThreadingTests
 
     TEST_F(DispatchQueueTest, testZeroThreads)
     {
-        Task task1 = std::bind(&DispatchQueueTest::testFunction1, this);
-        Task task2 = std::bind(&DispatchQueueTest::testFunction2, this);
-        Task task3 = std::bind(&DispatchQueueTest::testFunction3, this);
+        Task taskOne = std::bind(&DispatchQueueTest::testFunction1, this);
+        Task taskTwo = std::bind(&DispatchQueueTest::testFunction2, this);
+        Task taskThree = std::bind(&DispatchQueueTest::testFunction3, this);
 
         Threading::DispatchQueue queue(name_, countZero_);
-        queue.push(task1);
-        queue.push(task2);
-        queue.push(task3);
+        queue.push(taskOne);
+        queue.push(taskTwo);
+        queue.push(taskThree);
 
         assertMutex_.lock();
         assertMutex_.try_lock_for(std::chrono::milliseconds(100));
@@ -51,14 +51,14 @@ namespace ThreadingTests
 
     TEST_F(DispatchQueueTest, testOneThread)
     {
-        Task task1 = std::bind(&DispatchQueueTest::testFunction1, this);
-        Task task2 = std::bind(&DispatchQueueTest::testFunction2, this);
-        Task task3 = std::bind(&DispatchQueueTest::testFunction3, this);
+        Task taskOne = std::bind(&DispatchQueueTest::testFunction1, this);
+        Task taskTwo = std::bind(&DispatchQueueTest::testFunction2, this);
+        Task taskThree = std::bind(&DispatchQueueTest::testFunction3, this);
 
         Threading::DispatchQueue queue(name_, countOne_);
-        queue.push(task1);
-        queue.push(task2);
-        queue.push(task3);
+        queue.push(taskOne);
+        queue.push(taskTwo);
+        queue.push(taskThree);
 
         assertMutex_.lock();
         assertMutex_.try_lock_for(std::chrono::milliseconds(100));

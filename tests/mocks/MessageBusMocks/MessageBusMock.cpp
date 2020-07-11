@@ -4,8 +4,7 @@
 
 namespace MessageBusMocks
 {
-    MessageBusMock::MessageBusMock(Threading::DispatchQueue* dispatchQueue)
-        :MessageBus(dispatchQueue)
+    MessageBusMock::MessageBusMock()
     {
     }
 
