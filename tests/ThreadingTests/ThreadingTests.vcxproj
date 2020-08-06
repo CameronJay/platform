@@ -42,6 +42,16 @@
     <IntDir>$(SolutionDir)build\test\$(ProjectName)\$(Configuration)\</IntDir>
     <IncludePath>$(SolutionDir)projects;$(IncludePath)</IncludePath>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)build\test\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)build\test\$(ProjectName)\$(Configuration)\</IntDir>
+    <IncludePath>$(SolutionDir)projects;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)build\test\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)build\test\$(ProjectName)\$(Configuration)\</IntDir>
+    <IncludePath>$(SolutionDir)projects;$(IncludePath)</IncludePath>
+  </PropertyGroup>
   <ItemGroup>
     <ClInclude Include="DispatchQueueTest.h" />
     <ClInclude Include="pch.h" />

@@ -1,6 +1,6 @@
 #pragma once
 
 
-#ifdef WIN32
+#ifdef _WIN32
 #include "windows/InputReader.h"
-#endif // WIN32
+#endif // _WIN32
