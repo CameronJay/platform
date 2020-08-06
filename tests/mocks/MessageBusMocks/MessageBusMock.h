@@ -7,7 +7,7 @@ namespace MessageBusMocks
     class MessageBusMock : public MessageBus::MessageBus
     {
     public:
-        MessageBusMock(Threading::DispatchQueue* dispatchQueue);
+        MessageBusMock();
         virtual ~MessageBusMock();
 
     };

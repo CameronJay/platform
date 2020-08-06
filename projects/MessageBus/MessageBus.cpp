@@ -5,8 +5,8 @@
 
 namespace MessageBus
 {
-    MessageBus::MessageBus(Threading::DispatchQueue* dispatchQueue)
-        :dispatchQueue_(dispatchQueue)
+    MessageBus::MessageBus()
+        :dispatchQueue_(new Threading::DispatchQueue("Bus", 2))
     {
     }
 
@@ -16,11 +16,13 @@ namespace MessageBus
 
     void MessageBus::attach(MessageBusObserver* observer)
     {
+        std::lock_guard<std::mutex> lock(observerLock_);
         observers_.push_back(observer);
     }
 
     void MessageBus::detach(MessageBusObserver* observer)
     {
+        std::lock_guard<std::mutex> lock(observerLock_);
         observers_.remove(observer);
     }
 
@@ -33,6 +35,7 @@ namespace MessageBus
 
     void MessageBus::notify()
     {
+        std::lock_guard<std::mutex> lock(observerLock_);
         ObserverList::iterator iterator = observers_.begin();
         ObserverList::iterator end = observers_.end();
 
