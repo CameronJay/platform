@@ -1,9 +1,3 @@
-/*
-Platform
-Cameron Dempsey
-James Tubbs
-*/
-
 #include <iostream>
 #include <memory>
 #include <Input/InputReader.h>
