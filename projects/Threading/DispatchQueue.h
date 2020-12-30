@@ -24,9 +24,7 @@ namespace Threading
 
             std::queue<Task> queue_;
             std::mutex queueLock_;
-            std::condition_variable cv_;
             std::vector<std::thread> threads_;
-            bool run_;
             std::string const name_;
     };
 }
