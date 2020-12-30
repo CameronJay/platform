@@ -18,10 +18,6 @@ void Threading::ThreadPool::stop()
 {
 }
 
-void Threading::ThreadPool::execute()
-{
-}
-
 void Threading::ThreadPool::push(Task task)
 {
 }

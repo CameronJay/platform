@@ -19,7 +19,6 @@ namespace Threading
         protected:
             void start();
             void stop();
-            void execute();
 
             TaskQueue taskQueue_;
             TaskQueue completedTasks_;
