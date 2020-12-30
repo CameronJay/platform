@@ -1,6 +1,5 @@
 #pragma once
 
-#include <condition_variable>
 #include <queue>
 #include <mutex>
 #include <MessageBus/Message.h>
@@ -9,11 +8,11 @@
 
 namespace Threading
 {
-    class DispatchQueue
+    class ThreadPool
     {
         public:
-            DispatchQueue(std::string const& name, size_t threadCount = 1);
-            ~DispatchQueue();
+            ThreadPool(std::string const& name, size_t threadCount = 1);
+            ~ThreadPool();
             void push(Task task);
             void pop();
 
@@ -22,7 +21,8 @@ namespace Threading
             void stop();
             void execute();
 
-            std::queue<Task> queue_;
+            TaskQueue taskQueue_;
+            TaskQueue completedTasks_;
             std::mutex queueLock_;
             std::vector<std::thread> threads_;
             std::string const name_;

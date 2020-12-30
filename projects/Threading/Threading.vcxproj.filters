@@ -5,24 +5,24 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="DispatchQueue">
-      <UniqueIdentifier>{1417db2d-3840-433d-87c4-d04a9aaed333}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Task">
       <UniqueIdentifier>{53c91fc8-1a11-4dfc-99b6-3eeaf08364fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ThreadPool">
+      <UniqueIdentifier>{1417db2d-3840-433d-87c4-d04a9aaed333}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Task.h">
       <Filter>Task</Filter>
     </ClInclude>
-    <ClInclude Include="DispatchQueue.h">
-      <Filter>DispatchQueue</Filter>
+    <ClInclude Include="ThreadPool.h">
+      <Filter>ThreadPool</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DispatchQueue.cpp">
-      <Filter>DispatchQueue</Filter>
+    <ClCompile Include="ThreadPool.cpp">
+      <Filter>ThreadPool</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
