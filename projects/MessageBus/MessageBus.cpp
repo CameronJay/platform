@@ -6,7 +6,7 @@
 namespace MessageBus
 {
     MessageBus::MessageBus()
-        :threadPool_(new Threading::ThreadPool("Bus", 2))
+        :threadPool_(new Threading::ThreadPool("Bus", 1))
     {
         threadPool_->start();
     }
