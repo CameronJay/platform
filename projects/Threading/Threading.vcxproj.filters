@@ -11,6 +11,15 @@
     <Filter Include="ThreadPool">
       <UniqueIdentifier>{1417db2d-3840-433d-87c4-d04a9aaed333}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Semaphore">
+      <UniqueIdentifier>{d59254e3-5495-4b8d-b712-628f6e264c39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Semaphore\windows">
+      <UniqueIdentifier>{a8562ff1-a059-4062-878d-8ecf8549e527}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Semaphore\linux">
+      <UniqueIdentifier>{60b9a740-3ce8-46d3-87fd-06489b110976}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Task.h">
@@ -19,10 +28,19 @@
     <ClInclude Include="ThreadPool.h">
       <Filter>ThreadPool</Filter>
     </ClInclude>
+    <ClInclude Include="Semaphore.h">
+      <Filter>Semaphore</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ThreadPool.cpp">
       <Filter>ThreadPool</Filter>
+    </ClCompile>
+    <ClCompile Include="windows\Semaphore.cpp">
+      <Filter>Semaphore\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="linux\Semaphore.cpp">
+      <Filter>Semaphore\linux</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

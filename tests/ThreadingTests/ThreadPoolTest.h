@@ -2,7 +2,7 @@
 
 namespace ThreadingTests
 {
-    class DispatchQueueTest : public ::testing::Test
+    class ThreadPoolTest : public ::testing::Test
     {
     public:
 

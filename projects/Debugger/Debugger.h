@@ -9,7 +9,7 @@ namespace Debug
     class Debugger : public MessageBus::MessageBusObserver
     {
     public:
-        Debugger(MessageBus::MessageBus* bus);
+        Debugger(std::shared_ptr<MessageBus::MessageBus> bus);
         virtual ~Debugger();
 
         // MessageBusObserver
@@ -18,9 +18,9 @@ namespace Debug
         virtual void update();
 
         // Debugger
-        MessageBus::MessageBus* const bus() const { return bus_; }
+        MessageBus::MessageBus* const bus() const { return bus_.get(); }
 
     private:
-        MessageBus::MessageBus* bus_;
+        std::shared_ptr<MessageBus::MessageBus> bus_;
     };
 }

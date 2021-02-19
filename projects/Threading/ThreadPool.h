@@ -1,29 +1,36 @@
 #pragma once
 
-#include <queue>
 #include <mutex>
-#include <MessageBus/Message.h>
-#include <MessageBus/MessageBusObserver.h>
+#include <queue>
+#include <vector>
+#include <thread>
 #include "Task.h"
 
 namespace Threading
 {
+    class Semaphore;
+
     class ThreadPool
     {
         public:
-            ThreadPool(std::string const& name, size_t threadCount = 1);
+            ThreadPool(std::string const& name, size_t const threadCount = 1);
             ~ThreadPool();
-            void push(Task task);
-            void pop();
-
-        protected:
             void start();
             void stop();
+            void submit(Task task);
 
-            TaskQueue taskQueue_;
-            TaskQueue completedTasks_;
-            std::mutex queueLock_;
-            std::vector<std::thread> threads_;
+        protected:
+            void pool();
+
+            std::queue<Task> taskQueue_;
+            std::queue<Task> completedTasks_;
+            std::vector<std::thread*> threads_;
+            std::mutex taskLock_;
+            std::mutex threadsLock_;
+            std::shared_ptr<Semaphore> poolSignals_;
+
             std::string const name_;
+            size_t const threadCount_;
+            bool running_;
     };
 }

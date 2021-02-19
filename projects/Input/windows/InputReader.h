@@ -9,7 +9,7 @@ namespace Input
     class InputReader : public MessageBus::MessageBusObserver
     {
     public:
-        InputReader(MessageBus::MessageBus* bus);
+        InputReader(std::shared_ptr<MessageBus::MessageBus> bus);
         virtual ~InputReader();
 
         void inputLoop();
@@ -20,11 +20,11 @@ namespace Input
         virtual void update();
 
         // Debugger
-        MessageBus::MessageBus* const bus() const { return bus_; }
+        MessageBus::MessageBus* const bus() const { return bus_.get(); }
 
     private:
         static const char loopBreaker_ = 'd';
-        MessageBus::MessageBus* bus_;
+        std::shared_ptr<MessageBus::MessageBus> bus_;
         bool loop_;
     };
 }

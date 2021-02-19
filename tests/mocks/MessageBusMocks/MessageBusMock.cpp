@@ -1,5 +1,5 @@
 #include "MessageBusMock.h"
-#include <Threading/DispatchQueue.h>
+#include <Threading/ThreadPool.h>
 #include <Threading/Task.h>
 
 namespace MessageBusMocks

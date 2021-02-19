@@ -2,7 +2,7 @@
 #include <iostream>
 #include <MessageBus/MessageBus.h>
 
-Debug::Debugger::Debugger(MessageBus::MessageBus* bus)
+Debug::Debugger::Debugger(std::shared_ptr<MessageBus::MessageBus> bus)
 :bus_(bus)
 {
 }

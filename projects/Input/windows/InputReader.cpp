@@ -3,7 +3,7 @@
 #include <iostream>
 #include <MessageBus/MessageBus.h>
 
-Input::InputReader::InputReader(MessageBus::MessageBus* bus)
+Input::InputReader::InputReader(std::shared_ptr<MessageBus::MessageBus> bus)
     :bus_(bus),
     loop_(true)
 {

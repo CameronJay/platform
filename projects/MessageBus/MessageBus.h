@@ -8,7 +8,7 @@
 
 namespace Threading
 {
-    class DispatchQueue;
+    class ThreadPool;
 }
 
 namespace MessageBus
@@ -37,7 +37,7 @@ namespace MessageBus
         ObserverList observers_;
         MessageList messages_;
 
-        std::shared_ptr<Threading::DispatchQueue> dispatchQueue_;
+        std::shared_ptr<Threading::ThreadPool> threadPool_;
         std::mutex observerLock_;
     };
 

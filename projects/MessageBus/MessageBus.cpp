@@ -1,17 +1,19 @@
 #include "MessageBus.h"
 #include "MessageBusObserver.h"
-#include <Threading/DispatchQueue.h>
+#include <Threading/ThreadPool.h>
 #include <Threading/Task.h>
 
 namespace MessageBus
 {
     MessageBus::MessageBus()
-        :dispatchQueue_(new Threading::DispatchQueue("Bus", 2))
+        :threadPool_(new Threading::ThreadPool("Bus", 2))
     {
+        threadPool_->start();
     }
 
     MessageBus::~MessageBus()
     {
+        threadPool_->stop();
     }
 
     void MessageBus::attach(MessageBusObserver* observer)
@@ -30,7 +32,7 @@ namespace MessageBus
     {
         messages_.push_back(message);
         Task task = std::bind(&MessageBus::notify, this);
-        dispatchQueue_->push(task);
+        threadPool_->submit(task);
     }
 
     void MessageBus::notify()
