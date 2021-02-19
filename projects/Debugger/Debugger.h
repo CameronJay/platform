@@ -20,10 +20,8 @@ namespace Debug
 
         // Debugger
         void wait();
-        MessageBus::MessageBus* const bus() const { return bus_.get(); }
 
     private:
-        std::shared_ptr<MessageBus::MessageBus> bus_;
         static uint32_t idCounter_;
         uint32_t id_;
         std::mutex idLock_;

@@ -13,9 +13,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="windows\InputReader.h">
-      <Filter>InputReader\windows</Filter>
-    </ClInclude>
     <ClInclude Include="InputReader.h">
       <Filter>InputReader</Filter>
     </ClInclude>

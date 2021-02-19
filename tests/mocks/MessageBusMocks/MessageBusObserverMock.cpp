@@ -3,7 +3,8 @@
 namespace MessageBusMocks
 {
 
-    MessageBusObserverMock::MessageBusObserverMock()
+    MessageBusObserverMock::MessageBusObserverMock(std::shared_ptr<MessageBus::MessageBus> bus)
+        :MessageBus::MessageBusObserver(bus)
     {
     }
 

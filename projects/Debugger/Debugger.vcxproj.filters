@@ -13,7 +13,6 @@
     <ClCompile Include="Debugger.cpp">
       <Filter>Debugger</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Debugger.h">

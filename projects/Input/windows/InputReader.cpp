@@ -1,48 +1,51 @@
-#include "InputReader.h"
+#include "../InputReader.h"
 #include <conio.h>
 #include <iostream>
 #include <MessageBus/MessageBus.h>
 
-Input::InputReader::InputReader(std::shared_ptr<MessageBus::MessageBus> bus)
-    :bus_(bus),
-    loop_(true)
+namespace Input
 {
-}
-
-Input::InputReader::~InputReader()
-{
-    stop();
-}
-
-void Input::InputReader::inputLoop()
-{
-    char input;
-    while (loop_)
+    InputReader::InputReader(std::shared_ptr<MessageBus::MessageBus> bus)
+        :MessageBus::MessageBusObserver(bus),
+        loop_(true)
     {
-        input = _getch();
-        MessageBus::Message message(input);
-        bus_->receive(message);
     }
-}
 
-void Input::InputReader::start()
-{
-    bus_->attach(this);
-    inputLoop();
-}
-
-void Input::InputReader::stop()
-{
-    bus_->detach(this);
-}
-
-void Input::InputReader::update()
-{
-    MessageBus::Message message = bus_->messages().back();
-    std::cout << "InputReader received: " << message.text() << std::endl;
-
-    if (message.text()[0] == loopBreaker_)
+    InputReader::~InputReader()
     {
-        loop_ = false;
+        stop();
+    }
+
+    void InputReader::inputLoop()
+    {
+        char input;
+        while (loop_)
+        {
+            input = _getch();
+            MessageBus::Message message(input);
+            bus_->receive(message);
+        }
+    }
+
+    void InputReader::start()
+    {
+        bus_->attach(this);
+        inputLoop();
+    }
+
+    void InputReader::stop()
+    {
+        bus_->detach(this);
+    }
+
+    void InputReader::update()
+    {
+        MessageBus::Message message = bus_->messages().back();
+        std::cout << "InputReader received: " << message.text() << std::endl;
+
+        if (message.text()[0] == loopBreaker_)
+        {
+            loop_ = false;
+        }
     }
 }

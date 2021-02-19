@@ -9,7 +9,7 @@ namespace Debug
     uint32_t Debugger::idCounter_ = 0;
 
     Debugger::Debugger(std::shared_ptr<MessageBus::MessageBus> bus)
-        :bus_(bus),
+        :MessageBus::MessageBusObserver(bus),
         id_(idCounter_)
     {
         ++idCounter_;
