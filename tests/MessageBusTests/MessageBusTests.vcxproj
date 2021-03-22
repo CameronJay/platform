@@ -36,22 +36,22 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>$(SolutionDir)build\test\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)build\test\$(ProjectName)\$(Configuration)\</IntDir>
-    <IncludePath>$(SolutionDir)projects;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)projects;$(SolutionDir)tests/mocks;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(SolutionDir)build\test\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)build\test\$(ProjectName)\$(Configuration)\</IntDir>
-    <IncludePath>$(SolutionDir)projects;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)projects;$(SolutionDir)tests/mocks;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)build\test\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)build\test\$(ProjectName)\$(Configuration)\</IntDir>
-    <IncludePath>$(SolutionDir)projects;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)projects;$(SolutionDir)tests/mocks;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)build\test\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)build\test\$(ProjectName)\$(Configuration)\</IntDir>
-    <IncludePath>$(SolutionDir)projects;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)projects;$(SolutionDir)tests/mocks;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemGroup>
     <ClInclude Include="MessageBusTest.h" />
@@ -75,6 +75,15 @@
   <ItemGroup>
     <ProjectReference Include="..\..\projects\MessageBus\MessageBus.vcxproj">
       <Project>{071aec3c-8cd3-458e-b615-d6591ef69b3b}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\projects\Threading\Threading.vcxproj">
+      <Project>{70a4bf8b-edf1-49d5-8710-865fc6444be2}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\mocks\MessageBusMocks\MessageBusMocks.vcxproj.vcxproj">
+      <Project>{de783e05-6de5-4a92-a519-d8150c0b9bae}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\mocks\ThreadingMocks\ThreadingMocks.vcxproj">
+      <Project>{f3e61405-e0fd-4596-a6df-986f15a348cb}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemDefinitionGroup />

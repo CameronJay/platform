@@ -12,4 +12,9 @@ namespace MessageBusMocks
     {
     }
 
+    void MessageBusObserverMock::update()
+    {
+        notifiedMessages_ = bus_->messages();
+    }
+
 }

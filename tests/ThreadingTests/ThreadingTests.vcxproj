@@ -35,22 +35,22 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>$(SolutionDir)build\test\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)build\test\$(ProjectName)\$(Configuration)\</IntDir>
-    <IncludePath>$(SolutionDir)projects;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)projects;$(SolutionDir)tests/mocks;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(SolutionDir)build\test\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)build\test\$(ProjectName)\$(Configuration)\</IntDir>
-    <IncludePath>$(SolutionDir)projects;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)projects;$(SolutionDir)tests/mocks;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>$(SolutionDir)build\test\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)build\test\$(ProjectName)\$(Configuration)\</IntDir>
-    <IncludePath>$(SolutionDir)projects;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)projects;$(SolutionDir)tests/mocks;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)build\test\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)build\test\$(ProjectName)\$(Configuration)\</IntDir>
-    <IncludePath>$(SolutionDir)projects;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)projects;$(SolutionDir)tests/mocks;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemGroup>
     <ClInclude Include="ThreadPoolTest.h" />

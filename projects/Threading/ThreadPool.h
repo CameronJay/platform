@@ -15,13 +15,14 @@ namespace Threading
         public:
             ThreadPool(std::string const& name, size_t const threadCount = 1);
             ~ThreadPool();
-            void start();
-            void stop();
-            void submit(Task task);
+            virtual void start();
+            virtual void stop();
+            virtual void submit(Task task);
 
         protected:
             void pool();
 
+        private:
             std::queue<Task> taskQueue_;
             std::queue<Task> completedTasks_;
             std::vector<std::thread*> threads_;

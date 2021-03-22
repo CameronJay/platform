@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ThreadPoolMock">
+      <UniqueIdentifier>{210fa1d3-2108-4f5d-8218-69a6d5f6d242}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ThreadPoolMock.cpp">
+      <Filter>ThreadPoolMock</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ThreadPoolMock.h">
+      <Filter>ThreadPoolMock</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,6 +1,8 @@
 #pragma once
 
 #include <MessageBus/MessageBusObserver.h>
+#include <MessageBus/MessageBus.h>
+#include <vector>
 
 namespace MessageBusMocks
 {
@@ -13,7 +15,9 @@ namespace MessageBusMocks
 
         virtual void start() {}
         virtual void stop() {}
-        virtual void update() {}
+        virtual void update();
+
+        MessageBus::MessageBus::MessageList notifiedMessages_;
 
     };
 
