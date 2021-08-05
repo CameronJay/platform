@@ -13,7 +13,6 @@
 #undef protected
 #undef private
 
-
 namespace MessageBusTests
 {
     TEST_F(MessageBusTest, testAttachAndDetach)
@@ -23,7 +22,7 @@ namespace MessageBusTests
         size_t size = bus->observers_.size();
         EXPECT_EQ(count, size);
 
-        std::shared_ptr<MessageBusMocks::MessageBusObserverMock> 
+        std::shared_ptr<MessageBusMocks::MessageBusObserverMock>
             mockObserver(new MessageBusMocks::MessageBusObserverMock(bus));
 
         bus->attach(mockObserver.get());

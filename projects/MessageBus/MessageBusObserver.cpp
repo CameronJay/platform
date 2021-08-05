@@ -2,7 +2,6 @@
 
 namespace MessageBus
 {
-
     MessageBusObserver::MessageBusObserver(std::shared_ptr<MessageBus> bus)
         :bus_(bus)
     {
@@ -11,5 +10,4 @@ namespace MessageBus
     MessageBusObserver::~MessageBusObserver()
     {
     }
-
 }

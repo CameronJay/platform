@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Camer\source\repos\platform\third-party\glfw-3.3.3\Windows\CMakeFiles\5f0dc832f66fc64206c21357d245699d\INSTALL_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{A11D0DDD-3FAA-31F4-91DB-E2F333F1DCD3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

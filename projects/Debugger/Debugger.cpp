@@ -51,5 +51,4 @@ namespace Debug
 
         printf("Debugger %d finished waiting\n", id_);
     }
-
 }

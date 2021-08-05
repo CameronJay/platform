@@ -40,5 +40,4 @@ namespace MessageBus
         std::shared_ptr<Threading::ThreadPool> threadPool_;
         std::mutex observerLock_;
     };
-
 }

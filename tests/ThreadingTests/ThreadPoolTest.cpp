@@ -8,7 +8,6 @@
 #undef protected
 #undef private
 
-
 namespace ThreadingTests
 {
     TEST_F(ThreadPoolTest, testStartAndStop)
@@ -49,7 +48,6 @@ namespace ThreadingTests
             size = singleThreadedPool.threads_.size();
             EXPECT_EQ(count, size);
         }
-
     }
 
     TEST_F(ThreadPoolTest, testSubmit)
@@ -58,7 +56,5 @@ namespace ThreadingTests
 
     void ThreadPoolTest::singleThreadedAssert()
     {
-
     }
-
 }

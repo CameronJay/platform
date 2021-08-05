@@ -12,7 +12,7 @@ namespace App
     const std::string Application::name_ = "Main";
 
     Application::Application()
-        :pool_(new Threading::ThreadPool(name_, 2)),
+        :pool_(new Threading::ThreadPool(name_.c_str(), 2)),
         bus_(new MessageBus::MessageBus()),
         debugger_(new Debug::Debugger(bus_)),
         inputReader_(new Input::InputReader(bus_))
@@ -30,5 +30,4 @@ namespace App
         pool_->start();
         inputReader_->start();
     }
-
 }

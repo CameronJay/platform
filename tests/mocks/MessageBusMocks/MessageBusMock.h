@@ -9,7 +9,5 @@ namespace MessageBusMocks
     public:
         MessageBusMock();
         virtual ~MessageBusMock();
-
     };
-
 }

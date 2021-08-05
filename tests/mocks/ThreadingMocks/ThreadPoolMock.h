@@ -12,7 +12,5 @@ namespace ThreadingMocks
         virtual void start() {}
         virtual void stop() {}
         virtual void submit(Task task);
-
     };
-
 }

@@ -5,7 +5,7 @@ namespace Threading
 {
     struct SemaphoreProperties
     {
-        SemaphoreProperties(uint32_t initial, uint32_t max)
+        SemaphoreProperties(uint32_t initial, size_t max)
             :semaphore_(NULL),
             initial_(static_cast<LONG>(initial)),
             max_(static_cast<LONG>(max))
@@ -17,7 +17,7 @@ namespace Threading
         LONG   max_;
     };
 
-    Semaphore::Semaphore(uint32_t initial, uint32_t max)
+    Semaphore::Semaphore(uint32_t initial, size_t max)
         :properties_(new SemaphoreProperties(initial, max))
     {
     }
@@ -56,7 +56,7 @@ namespace Threading
         return ret;
     }
 
-    bool Semaphore::post(uint32_t count)
+    bool Semaphore::post(size_t count)
     {
         bool ret = false;
         if (properties_->semaphore_ != NULL)

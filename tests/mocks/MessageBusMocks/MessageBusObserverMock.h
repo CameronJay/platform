@@ -6,7 +6,6 @@
 
 namespace MessageBusMocks
 {
-
     class MessageBusObserverMock : public MessageBus::MessageBusObserver
     {
     public:
@@ -18,7 +17,5 @@ namespace MessageBusMocks
         virtual void update();
 
         MessageBus::MessageBus::MessageList notifiedMessages_;
-
     };
-
 }

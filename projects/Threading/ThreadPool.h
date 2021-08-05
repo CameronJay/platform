@@ -12,26 +12,26 @@ namespace Threading
 
     class ThreadPool
     {
-        public:
-            ThreadPool(std::string const& name, size_t const threadCount = 1);
-            ~ThreadPool();
-            virtual void start();
-            virtual void stop();
-            virtual void submit(Task task);
+    public:
+        ThreadPool(std::string const name, size_t const threadCount = 1);
+        ~ThreadPool();
+        virtual void start();
+        virtual void stop();
+        virtual void submit(Task task);
 
-        protected:
-            void pool();
+    protected:
+        void pool();
 
-        private:
-            std::queue<Task> taskQueue_;
-            std::queue<Task> completedTasks_;
-            std::vector<std::thread*> threads_;
-            std::mutex taskLock_;
-            std::mutex threadsLock_;
-            std::shared_ptr<Semaphore> poolSignals_;
+    private:
+        std::queue<Task> taskQueue_;
+        std::queue<Task> completedTasks_;
+        std::vector<std::thread*> threads_;
+        std::mutex taskLock_;
+        std::mutex threadsLock_;
+        std::shared_ptr<Semaphore> poolSignals_;
 
-            std::string const name_;
-            size_t const threadCount_;
-            bool running_;
+        std::string const name_;
+        size_t const threadCount_;
+        bool running_;
     };
 }

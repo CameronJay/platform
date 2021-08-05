@@ -8,7 +8,7 @@ namespace MessageBusTests
     const MessageBus::Message MessageTest::stringMessage_(MessageTest::testString_);
     const MessageBus::Message MessageTest::charMessage_(MessageTest::testChar_);
 
-    TEST_F(MessageTest, testStringMessage) 
+    TEST_F(MessageTest, testStringMessage)
     {
         const char* expectedCharArray = MessageTest::testString_.c_str();
         const char* actualCharArray = stringMessage_.text().c_str();

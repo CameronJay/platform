@@ -11,7 +11,7 @@ namespace MessageBus
         Message(char const character);
         virtual ~Message();
         std::string const& text() const { return text_; }
-    
+
     private:
         std::string text_;
     };

@@ -3,8 +3,7 @@
 
 namespace Threading
 {
-
-    ThreadPool::ThreadPool(std::string const& name, size_t const threadCount)
+    ThreadPool::ThreadPool(std::string const name, size_t const threadCount)
         :name_(name),
         threadCount_(threadCount),
         running_(false),
@@ -80,5 +79,4 @@ namespace Threading
 
         poolSignals_->post(); // signal that a task was added
     }
-
 }

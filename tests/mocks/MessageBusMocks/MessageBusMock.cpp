@@ -11,5 +11,4 @@ namespace MessageBusMocks
     MessageBusMock::~MessageBusMock()
     {
     }
-
 }

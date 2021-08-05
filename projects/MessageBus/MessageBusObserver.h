@@ -21,7 +21,5 @@ namespace MessageBus
 
     protected:
         std::shared_ptr<MessageBus> bus_;
-
     };
-
 }
