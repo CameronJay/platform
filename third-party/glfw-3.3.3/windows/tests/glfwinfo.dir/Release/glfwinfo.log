@@ -1,7 +1,0 @@
-﻿  Building Custom Rule C:/Users/Camer/source/repos/platform/third-party/glfw-3.3.3/tests/CMakeLists.txt
-  glfwinfo.c
-  getopt.c
-  glad_gl.c
-  glad_vulkan.c
-  Generating Code...
-  glfwinfo.vcxproj -> C:\Users\Camer\source\repos\platform\third-party\glfw-3.3.3\Windows\tests\Release\glfwinfo.exe
