@@ -34,27 +34,36 @@ namespace ThreadingTests
         {
             std::string name = "test";
             size_t count = 3; // just more than one.
-            Threading::ThreadPool singleThreadedPool(name, count);
+            Threading::ThreadPool multiThreadedPool(name, count);
 
-            singleThreadedPool.start();
-            bool running = singleThreadedPool.running_;
+            multiThreadedPool.start();
+            bool running = multiThreadedPool.running_;
             EXPECT_EQ(true, running);
-            size_t size = singleThreadedPool.threads_.size();
+            size_t size = multiThreadedPool.threads_.size();
             EXPECT_EQ(count, size);
 
-            singleThreadedPool.stop();
-            running = singleThreadedPool.running_;
+            multiThreadedPool.stop();
+            running = multiThreadedPool.running_;
             EXPECT_EQ(false, running);
-            size = singleThreadedPool.threads_.size();
+            size = multiThreadedPool.threads_.size();
             EXPECT_EQ(count, size);
         }
     }
 
     TEST_F(ThreadPoolTest, testSubmit)
     {
-    }
+        std::string name = "test";
+        size_t count = 1; // just one.
+        Threading::ThreadPool pool(name, count);
 
-    void ThreadPoolTest::singleThreadedAssert()
-    {
+        size_t actualSize = pool.taskQueue_.size();
+        size_t expectedSize = 0;
+        EXPECT_EQ(actualSize, expectedSize);
+
+        Task task = 0;
+        pool.submit(task);
+        actualSize = pool.taskQueue_.size();
+        expectedSize = 1;
+        EXPECT_EQ(actualSize, expectedSize);
     }
 }
